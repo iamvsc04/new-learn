@@ -1,13 +1,12 @@
-
 import Course from "../models/Course.model.js";
 import User from "../models/User.model.js";
 
 export async function getCourse(req, res) {
   try {
-    const courses = await User.find();
+    const courses = await Course.find();
     res.status(200).json(courses);
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(500).json({ message: "Error" });
   }
 }
