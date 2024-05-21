@@ -17,4 +17,6 @@ app.use("/api/profile", profileRoute);
 app.use("/api/enrollments", enrollRoute);
 app.use("/api/reviews", reviewRoute);
 
-app.listen(port, () => {});
+app.listen(port, () => {
+    console.log(`listening to ${port}`)
+});
