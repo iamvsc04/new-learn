@@ -9,7 +9,7 @@ import {
   getCourseByCriteria,
 } from "../controllers/course.controller.js";
 
-route.get("", getCourse);
+route.get("/", getCourse);
 route.get("/:id", getCourseById);
 route.get("/search", getCourseByCriteria);
 
