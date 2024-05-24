@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import './Home.jpg';
+import './home.jpg';
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
            
           </div>
           <div className="col-lg-6 d-flex justify-content-center">
-            <img src={require('./Home.jpg')} alt="Logo" className="img-fluid" style={{ maxWidth: '100%' }} />
+            <img src={require('./home.jpg')} alt="Logo" className="img-fluid" style={{ maxWidth: '100%' }} />
           </div>
         </div>
       </div>
