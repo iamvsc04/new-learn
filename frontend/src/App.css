@@ -6,10 +6,10 @@
   z-index: -1;
   width: 100%;
   height: 4rem;
-  margin-bottom: 1rem;
   display: flex;
   justify-content: end;
   justify-items: space-between;
+  z-index: 999;
 }
 .para {
   color: black;
@@ -53,8 +53,7 @@
   margin: 5px;
   margin-bottom: 10px;
 }
-.input {
-}
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
@@ -123,4 +122,69 @@
 .loginPara:hover {
   color: rgb(20, 14, 210);
   border: 2px solid black;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.categories_right .category {
+  background: var(--color-bg2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: var(--transition);
+  height: 100%;
+  overflow: hidden; 
+}
+
+.categories_right .category:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.categories_right .category h5 {
+  margin: 0.5rem 0;
+}
+
+.categories_right .category p {
+  margin-bottom: 0;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.categories_right .category {
+  height: 250px;
+}
+
+.categories_right .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CSS */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: white; 
+  padding: 20px; 
+  text-align: center; 
+  z-index: -1; 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+}
+
+.footer.show {
+  opacity: 1; 
 }
