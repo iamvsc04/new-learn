@@ -1,10 +1,7 @@
 import express from "express";
 import authorizeToken from "../middleware/authorizetoken.middleware.js";
 
-const app = express();
-const route = express.Router();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const router = express.Router();
 
 import {
   getProfile,
@@ -14,11 +11,11 @@ import {
   getProfileCompleted,
 } from "../controllers/profile.controller.js";
 
-route.use(authorizeToken);
+router.use(authorizeToken);
 //User profile endpoints
-route.get("", getProfile);
-route.put("/edit", editProfile);
-route.get("/enrolled", getProfileCourses);
-route.get("/favourites", getProfileFavorites);
-route.get("/completed", getProfileCompleted);
-export default route;
+router.get("", getProfile);
+router.put("/edit", editProfile);
+router.get("/enrolled", getProfileCourses);
+router.get("/favourites", getProfileFavorites);
+router.get("/completed", getProfileCompleted);
+export default router;
