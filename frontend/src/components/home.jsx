@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import './home.jpg';
+import './Home.jpg';
 
 function Home() {
   return (
@@ -10,10 +10,11 @@ function Home() {
           <div className="col-lg-6 text-center">
             <h1 className="display-4 mb-4 text-success">LEARN HUB</h1>
             <p className="text-dark">Welcome to our comprehensive Learning Platform for students.</p>
-            <button className="btn btn-danger">Getting Started</button>
+            <a href="/register" className="btn btn-danger">Getting Started</a>
+           
           </div>
           <div className="col-lg-6 d-flex justify-content-center">
-            <img src={require('./home.jpg')} alt="Logo" className="img-fluid" style={{ maxWidth: '100%' }} />
+            <img src={require('./Home.jpg')} alt="Logo" className="img-fluid" style={{ maxWidth: '100%' }} />
           </div>
         </div>
       </div>
