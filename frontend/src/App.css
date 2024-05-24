@@ -1,0 +1,126 @@
+.navbar {
+  background-color: rgb(12, 188, 201);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: end;
+  justify-items: space-between;
+}
+.para {
+  color: black;
+  float: right;
+  padding: 0rem 1rem 0rem 1rem;
+  margin: auto;
+  bottom: 2px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.para:hover {
+  background-color: rgb(72, 9, 135);
+  color: white;
+  box-shadow: black 4px 4px;
+}
+.space {
+  margin: auto;
+  margin-top: 6rem;
+}
+
+.reg-box {
+  height: 400px;
+  width: 300px;
+  margin: auto;
+  margin-top: 30vh;
+  border-radius: 10%;
+  text-align: center;
+  padding: 0.5px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.inp-box {
+  margin: auto;
+  height: 200px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.input {
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+.reg {
+  height: 20px;
+  width: 200px;
+}
+.button-box {
+  height: 90px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.regRegisterBtn {
+  margin-top: 10px;
+  background-color: rgb(24, 179, 19);
+  height: 25px;
+  width: 100px;
+  padding: 0px;
+  margin-bottom: 1rem;
+}
+.regRegisterBtn:hover {
+  background-color: rgb(20, 149, 241);
+}
+.bridge {
+  height: 25px;
+  width: 200px;
+  padding: 0px;
+  margin-top: 0.5rem;
+}
+
+.log-box {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  margin-top: 35vh;
+  border-radius: 10%;
+  text-align: center;
+  padding: 0.5px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.inpLog-box {
+  margin: auto;
+  height: 100px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.Log-bridge {
+  height: 25px;
+  width: 200px;
+  padding: 0px;
+  margin: auto;
+}
+.loginPara {
+  color: rgb(158, 19, 19);
+  margin-top: 1rem;
+}
+.loginPara:hover {
+  color: rgb(20, 14, 210);
+  border: 2px solid black;
+}
