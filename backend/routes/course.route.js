@@ -1,16 +1,13 @@
 import express from "express";
-const app = express();
-const route = express.Router();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const router = express.Router();
 import {
   getCourse,
   getCourseById,
   getCourseByCriteria,
 } from "../controllers/course.controller.js";
 
-route.get("/", getCourse);
-route.get("/:id", getCourseById);
-route.get("/search", getCourseByCriteria);
+router.get("/", getCourse);
+router.get("/search", getCourseByCriteria);
+router.get("/:id", getCourseById);
 
-export default route;
+export default router;

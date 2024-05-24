@@ -1,17 +1,13 @@
-import express from "express";
+import express, { Router } from "express";
 import {
   userSignUp,
   userLogin,
   userLogout,
 } from "../controllers/authentication.controller.js";
 
-const app = express();
-const route = express.Router();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const router = express.Router();
+router.post("/signup", userSignUp);
+router.post("/login", userLogin);
+router.post("/logout", userLogout);
 
-route.post("/signup", userSignUp);
-route.post("/login", userLogin);
-route.post("/logout", userLogout);
-
-export default route;
+export default router;
