@@ -8,7 +8,7 @@ import reviewRoute from "./routes/review.route.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 
-const port = process.env.PORT;
+const port = 8080;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +22,6 @@ app.use("/api/reviews", reviewRoute);
 
 //mongoose.connect(process.env.MONGODB_URL);
 mongoose.connect("mongodb://127.0.0.1:27017/new-learn");
-
 
 app.listen(port, () => {
   console.log(`Listening to ${port}`);
