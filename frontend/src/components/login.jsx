@@ -19,9 +19,15 @@ function Login() {
         {
           email,
           password,
+        },
+        {
+          withCredentials: true, // Ensure cookies are sent
         }
       );
       if (response.status === 200) {
+        // Store token in local storage
+        localStorage.setItem("token", response.data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
         login();
         navigate("/home");
       }

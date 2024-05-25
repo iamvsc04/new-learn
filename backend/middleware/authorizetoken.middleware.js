@@ -9,7 +9,7 @@ function authorizeToken(req, res, next) {
     if (err) {
       res.clearCookie("jwt", {
         sameSite: "None",
-        secure: false,
+        secure: true,
       });
       return res.status(401).json({ message: "Unauthorized" });
     }

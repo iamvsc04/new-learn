@@ -1,21 +1,29 @@
-// AuthContext.js
 import React, { createContext, useContext, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-// Create context
 const AuthContext = createContext();
 
-// Create context provider
 export const AuthProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
+  const navigate = useNavigate();
 
-  // Function to set authentication state
   const login = () => {
     setAuthenticated(true);
   };
 
-  // Function to unset authentication state
-  const logout = () => {
+  const logout = async () => {
+    localStorage.removeItem("token");
     setAuthenticated(false);
+
+    try {
+      await axios.post("http://localhost:9000/api/auth/logout", null, {
+        withCredentials: true,
+      });
+      navigate("/login"); 
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -25,5 +33,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use auth context
 export const useAuth = () => useContext(AuthContext);
