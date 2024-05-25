@@ -1,3 +1,4 @@
+/* Navbar */
 .navbar {
   background-color: rgb(12, 188, 201);
   position: fixed;
@@ -11,6 +12,8 @@
   justify-items: space-between;
   z-index: 999;
 }
+
+/* Navbar link */
 .para {
   color: black;
   float: right;
@@ -20,16 +23,20 @@
   text-decoration: none;
   font-size: 1.5rem;
 }
+
 .para:hover {
   background-color: rgb(72, 9, 135);
   color: white;
   box-shadow: black 4px 4px;
 }
+
+/* Space */
 .space {
   margin: auto;
   margin-top: 6rem;
 }
 
+/* Registration box */
 .reg-box {
   height: 400px;
   width: 300px;
@@ -42,6 +49,7 @@
   background-color: white;
 }
 
+/* Input box */
 .inp-box {
   margin: auto;
   height: 200px;
@@ -57,10 +65,14 @@
 ::-webkit-input-placeholder {
   text-align: center;
 }
+
+/* Registration input */
 .reg {
   height: 20px;
   width: 200px;
 }
+
+/* Button box */
 .button-box {
   height: 90px;
   display: grid;
@@ -68,6 +80,8 @@
   align-items: center;
   justify-items: center;
 }
+
+/* Registration button */
 .regRegisterBtn {
   margin-top: 10px;
   background-color: rgb(24, 179, 19);
@@ -76,9 +90,12 @@
   padding: 0px;
   margin-bottom: 1rem;
 }
+
 .regRegisterBtn:hover {
   background-color: rgb(20, 149, 241);
 }
+
+/* Bridge */
 .bridge {
   height: 25px;
   width: 200px;
@@ -86,6 +103,7 @@
   margin-top: 0.5rem;
 }
 
+/* Login box */
 .log-box {
   height: 300px;
   width: 300px;
@@ -98,6 +116,7 @@
   background-color: white;
 }
 
+/* Input login box */
 .inpLog-box {
   margin: auto;
   height: 100px;
@@ -109,16 +128,21 @@
   margin: 5px;
   margin-bottom: 10px;
 }
+
+/* Login bridge */
 .Log-bridge {
   height: 25px;
   width: 200px;
   padding: 0px;
   margin: auto;
 }
+
+/* Login paragraph */
 .loginPara {
   color: rgb(158, 19, 19);
   margin-top: 1rem;
 }
+
 .loginPara:hover {
   color: rgb(20, 14, 210);
   border: 2px solid black;
@@ -131,12 +155,14 @@
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   color: #333;
 }
 
+/* Categories */
 .categories_right .category {
   background: var(--color-bg2);
   border-radius: 1rem;
@@ -170,28 +196,60 @@ body {
   flex-wrap: wrap;
 }
 
-/* CSS */
+/* Testimonials */
+.testimonials {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.testimonials .card {
+  height: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonials .card-title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testimonials .card-text {
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+/* Footer */
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #343a40;
-  color: white; 
-  padding: 20px; 
-  text-align: center; 
-  z-index: -1; 
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 0;
   opacity: 0;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
 }
 
 .footer.show {
-  opacity: 1; 
+  opacity: 1;
 }
 
 
-/*login*/
-/* Container styles */
+/* Login container */
 .login-container {
   display: flex;
   justify-content: center;
@@ -199,7 +257,7 @@ body {
   height: 100vh;
 }
 
-/* Form styles */
+/* Login form */
 .login-form {
   width: 350px;
   padding: 30px;
@@ -211,25 +269,25 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Header styles */
+/* Login header */
 .login-header {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
 }
 
-/* Input group styles */
+/* Login input group */
 .input-group {
   margin-bottom: 20px;
 }
 
-/* Label styles */
+/* Login label */
 .login-label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* Input styles */
+/* Login input */
 .login-input {
   width: 100%;
   padding: 10px;
@@ -239,12 +297,12 @@ body {
   transition: border-color 0.3s ease;
 }
 
-/* Input focus styles */
+/* Login input focus */
 .login-input:focus {
   border-color: #007bff;
 }
 
-/* Button styles */
+/* Login button */
 .login-button {
   width: 100%;
   padding: 12px;
@@ -257,30 +315,30 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Button hover styles */
+/* Login button hover */
 .login-button:hover {
   background-color: #0056b3;
 }
 
-/* Register link styles */
+/* Login register link */
 .login-register-link {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
 }
 
-/* Link styles */
+/* Register link */
 .register-link {
   color: #007bff;
   text-decoration: none;
 }
 
-/* Link hover styles */
+/* Register link hover */
 .register-link:hover {
   text-decoration: underline;
 }
 
-/* Animation */
+/* Login animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -292,7 +350,7 @@ body {
   }
 }
 
-/* Input shake effect */
+/* Login input shake effect */
 .login-input {
   animation: shake 0.5s ease-in-out;
 }
@@ -305,8 +363,7 @@ body {
   100% { transform: translateX(0); }
 }
 
-
-/*Register*/
+/* Register container */
 .register-container {
   display: flex;
   justify-content: center;
@@ -314,6 +371,7 @@ body {
   height: 100vh;
 }
 
+/* Register form */
 .register-form {
   width: 350px;
   padding: 30px;
@@ -323,21 +381,25 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Register header */
 .register-header {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
 }
 
+/* Register input group */
 .input-group {
   margin-bottom: 20px;
 }
 
+/* Register label */
 .register-label {
   display: block;
   margin-bottom: 5px;
 }
 
+/* Register input */
 .register-input {
   width: 100%;
   padding: 10px;
@@ -347,10 +409,12 @@ body {
   transition: border-color 0.3s ease;
 }
 
+/* Register input focus */
 .register-input:focus {
   border-color: #007bff;
 }
 
+/* Register button */
 .register-button {
   width: 100%;
   padding: 12px;
@@ -363,21 +427,25 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Register button hover */
 .register-button:hover {
   background-color: #0056b3;
 }
 
+/* Register login link */
 .register-login-link {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
 }
 
+/* Login link */
 .login-link {
   color: #007bff;
   text-decoration: none;
 }
 
+/* Login link hover */
 .login-link:hover {
   text-decoration: underline;
 }
