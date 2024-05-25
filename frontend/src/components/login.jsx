@@ -1,29 +1,47 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../App.css"; // Import CSS for styling
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuth } from "./AuthContext";
+import "../App.css";
 
 function Login() {
-  // State for storing user inputa
-  const [username, setUsername] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
+    try {
+      const response = await axios.post(
+        "http://localhost:9000/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+      if (response.status === 200) {
+        login();
+        navigate("/home");
+      }
+    } catch (error) {
+      setError("Invalid email or password");
+    }
   };
 
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h1 className="login-header">Welcome Back!</h1>
+        {error && <div className="error-message">{error}</div>}
         <div className="input-group">
           <input
             type="text"
-            placeholder="Enter username"
+            placeholder="Enter email"
             className="login-input"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input-group">

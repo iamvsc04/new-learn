@@ -1,24 +1,31 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar"; 
-import Home from "./components/home"; 
-import About from "./components/About"; 
-import Login from "./components/login"; 
-import Register from "./components/Register"; 
-import Footer from "./components/Footer"; 
-import "./App.css";
+// App.js
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './components/AuthContext';
+import Navbar from './components/Navbar.jsx';
+import Home from './components/home.jsx';
+import About from './components/About.jsx';
+import Login from './components/login.jsx';
+import Register from './components/Register.jsx';
+import Footer from './components/Footer.jsx';
+import Courses from './components/Courses.jsx';
+import CourseDetail from './components/CourseDetail.jsx';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:courseId" element={<CourseDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

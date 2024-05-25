@@ -7,13 +7,14 @@ import profileRoute from "./routes/profile.route.js";
 import reviewRoute from "./routes/review.route.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
-// const port = process.env.PORT;
+//const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/courses", courseRoute);
 app.use("/api/profile", profileRoute);
@@ -21,10 +22,8 @@ app.use("/api/enrollments", enrollRoute);
 app.use("/api/reviews", reviewRoute);
 
 mongoose.connect(process.env.MONGODB_URL);
-// mongoose.connect(pro");
-
-app.listen(8080, () => {
-  console.log(`Listening to 8080`);
+app.listen(9000, () => {
+  console.log(`Listening to 9000`);
 });
 
 app.get("/", (req, res) => {

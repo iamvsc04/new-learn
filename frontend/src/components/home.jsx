@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"; // Assuming your CSS file is named Home.css
+import "../App.css";
 import HomeImage from "./Home.jpg";
 
 function Home() {
