@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/AuthContext.jsx";
@@ -14,17 +13,23 @@ import CourseDetail from "./components/CourseDetail.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider> {/* Wrap entire app with AuthProvider */}
-        <Navbar />
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/:courseId" element={<CourseDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-        <Footer />
+      <AuthProvider>
+        <div className="app-container">
+          {" "}
+          {/* Add a wrapper container */}
+          <Navbar />
+          <div className="content">
+            <Routes>
+              <Route path="/about" element={<About />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/courses/:courseId" element={<CourseDetail />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </AuthProvider>
     </BrowserRouter>
   );

@@ -1,23 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* This will make sure the content area expands to fill the available space */
+}
+
 /* Navbar */
 .navbar {
   background-color: rgb(12, 188, 201);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 999;
   width: 100%;
   height: 4rem;
   display: flex;
   justify-content: end;
   justify-items: space-between;
-  z-index: 999;
 }
 
 /* Navbar link */
 .para {
   color: black;
   float: right;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 1rem;
   margin: auto;
   bottom: 2px;
   text-decoration: none;
@@ -36,12 +50,10 @@
   margin-top: 6rem;
 }
 
-/* Registration box */
-.reg-box {
-  height: 400px;
+/* Common styles for containers */
+.common-box {
   width: 300px;
   margin: auto;
-  margin-top: 30vh;
   border-radius: 10%;
   text-align: center;
   padding: 0.5px;
@@ -49,10 +61,10 @@
   background-color: white;
 }
 
-/* Input box */
-.inp-box {
+.inp-box,
+.inpLog-box,
+.button-box {
   margin: auto;
-  height: 200px;
   text-align: center;
   display: grid;
   justify-content: center;
@@ -62,82 +74,41 @@
   margin-bottom: 10px;
 }
 
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-/* Registration input */
 .reg {
   height: 20px;
   width: 200px;
 }
 
-/* Button box */
-.button-box {
-  height: 90px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
+.regRegisterBtn,
+.regRegisterBtn:hover,
+.bridge {
+  height: 25px;
+  width: 200px;
+  padding: 0px;
 }
 
-/* Registration button */
 .regRegisterBtn {
   margin-top: 10px;
   background-color: rgb(24, 179, 19);
-  height: 25px;
-  width: 100px;
-  padding: 0px;
-  margin-bottom: 1rem;
 }
 
 .regRegisterBtn:hover {
   background-color: rgb(20, 149, 241);
 }
 
-/* Bridge */
-.bridge {
-  height: 25px;
-  width: 200px;
-  padding: 0px;
-  margin-top: 0.5rem;
-}
-
-/* Login box */
-.log-box {
+/* Login and Registration boxes */
+.log-box,
+.reg-box {
   height: 300px;
-  width: 300px;
-  margin: auto;
   margin-top: 35vh;
-  border-radius: 10%;
-  text-align: center;
-  padding: 0.5px;
-  border: 2px solid black;
-  background-color: white;
 }
 
-/* Input login box */
-.inpLog-box {
-  margin: auto;
-  height: 100px;
-  text-align: center;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  margin: 5px;
-  margin-bottom: 10px;
+.reg-box {
+  height: 400px;
+  margin-top: 30vh;
 }
 
-/* Login bridge */
-.Log-bridge {
-  height: 25px;
-  width: 200px;
-  padding: 0px;
-  margin: auto;
-}
-
-/* Login paragraph */
+/* Login specific */
 .loginPara {
   color: rgb(158, 19, 19);
   margin-top: 1rem;
@@ -148,18 +119,93 @@
   border: 2px solid black;
 }
 
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Login and Register containers */
+.login-container,
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Body */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+.login-form,
+.register-form {
+  width: 350px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-header,
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.login-label,
+.register-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-input,
+.register-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus,
+.register-input:focus {
+  border-color: #007bff;
+}
+
+.login-button,
+.register-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+.login-register-link,
+.register-login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-link,
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link:hover,
+.login-link:hover {
+  text-decoration: underline;
 }
 
 /* Categories */
@@ -169,7 +215,7 @@ body {
   padding: 1.5rem;
   transition: var(--transition);
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .categories_right .category:hover {
@@ -183,8 +229,8 @@ body {
 
 .categories_right .category p {
   margin-bottom: 0;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .categories_right .category {
@@ -231,223 +277,25 @@ body {
 
 /* Footer */
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   background-color: #343a40;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.footer.show {
-  opacity: 1;
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-
-/* Login container */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.footer .quotes p,
+.footer .footer-text p {
+  margin: 10px 0;
 }
 
-/* Login form */
-.login-form {
-  width: 350px;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Login header */
-.login-header {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-}
-
-/* Login input group */
-.input-group {
-  margin-bottom: 20px;
-}
-
-/* Login label */
-.login-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-/* Login input */
-.login-input {
-  width: 100%;
+.footer .footer-text {
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
-}
-
-/* Login input focus */
-.login-input:focus {
-  border-color: #007bff;
-}
-
-/* Login button */
-.login-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Login button hover */
-.login-button:hover {
-  background-color: #0056b3;
-}
-
-/* Login register link */
-.login-register-link {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-/* Register link */
-.register-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* Register link hover */
-.register-link:hover {
-  text-decoration: underline;
-}
-
-/* Login animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Login input shake effect */
-.login-input {
-  animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(5px); }
-  50% { transform: translateX(-5px); }
-  75% { transform: translateX(3px); }
-  100% { transform: translateX(0); }
-}
-
-/* Register container */
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* Register form */
-.register-form {
-  width: 350px;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Register header */
-.register-header {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-}
-
-/* Register input group */
-.input-group {
-  margin-bottom: 20px;
-}
-
-/* Register label */
-.register-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-/* Register input */
-.register-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
-}
-
-/* Register input focus */
-.register-input:focus {
-  border-color: #007bff;
-}
-
-/* Register button */
-.register-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Register button hover */
-.register-button:hover {
-  background-color: #0056b3;
-}
-
-/* Register login link */
-.register-login-link {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-/* Login link */
-.login-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* Login link hover */
-.login-link:hover {
-  text-decoration: underline;
+  font-size: 1.25rem;
 }
 
 /* Animation */
@@ -460,4 +308,85 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.login-input {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Additional Styling for Better Look */
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer .quotes {
+  margin-bottom: 20px;
+}
+
+.footer .footer-text p {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes up at least the height of the viewport */
+  display: flex;
+  flex-direction: column; /* Set main axis to vertical */
+}
+
+.content {
+  flex: 1; /* Allow content to expand to fill remaining space */
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  flex-shrink: 0; /* Ensure footer does not shrink */
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .quotes p,
+.footer .footer-text p {
+  margin: 10px 0;
+}
+
+.footer .footer-text {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 1.25rem;
 }

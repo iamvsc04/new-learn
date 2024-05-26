@@ -8,6 +8,7 @@ function authorizeToken(req, res, next) {
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       res.clearCookie("jwt", {
+        httpOnly: true,
         sameSite: "None",
         secure: true,
       });
