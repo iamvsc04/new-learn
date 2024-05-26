@@ -10,18 +10,23 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 const app = express();
-// const port = process.env.PORT;
+//const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3000',  
+  credentials: true 
+}));
+
 app.use("/api/auth", authRoute);
 app.use("/api/courses", courseRoute);
 app.use("/api/profile", profileRoute);
 app.use("/api/enrollments", enrollRoute);
 app.use("/api/reviews", reviewRoute);
 
-mongoose.connect("mongodb://127.0.0.1:27017");
+mongoose.connect(process.env.MONGODB_URL);
 app.listen(9000, () => {
   console.log(`Listening to 9000`);
 });
