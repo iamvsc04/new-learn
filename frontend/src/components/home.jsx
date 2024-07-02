@@ -95,8 +95,8 @@ function Home() {
                       <strong>Interactive Learning</strong>
                     </h5>
                     <p>
-                      Engage in immersive learning  through
-                      interactive courses.
+                      Engage in immersive learning experiences through
+                      interactive courses and simulations.
                     </p>
                   </article>
                 </div>
@@ -106,7 +106,7 @@ function Home() {
                       <strong>Expert Instruction</strong>
                     </h5>
                     <p>
-                      Learn from industry experts who are
+                      Learn from industry experts and thought leaders who are
                       passionate about sharing their knowledge.
                     </p>
                   </article>
