@@ -1,14 +1,10 @@
-
+// Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 function Navbar() {
   const { authenticated, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout(); // Call logout function from AuthContext
-  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,9 +24,14 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/about">About Us</Link>
             </li>
+            {authenticated && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/profile">Profile</Link>
+              </li>
+            )}
             <li className="nav-item">
               {authenticated ? (
-                <button className="nav-link" onClick={handleLogout}>Logout</button>
+                <button className="nav-link" onClick={logout}>Logout</button>
               ) : (
                 <Link className="nav-link" to="/login">Login</Link>
               )}
