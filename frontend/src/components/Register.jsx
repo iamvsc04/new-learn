@@ -11,7 +11,7 @@ function Register() {
   const [rePassword, setRePassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(

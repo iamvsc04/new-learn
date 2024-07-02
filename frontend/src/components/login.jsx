@@ -1,34 +1,63 @@
+
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../App.css"; // Import CSS for styling
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../App.css"; 
+import { useAuth } from './AuthContext';
 
 function Login() {
-  // State for storing user inputa
-  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
+    try {
+      const response = await axios.post(
+        "http://localhost:9000/api/auth/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true } 
+      );
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.token); // Store token in localStorage
+        login(); // Update authenticated state
+        navigate("/courses");
+      }
+    } catch (error) {
+      setError(error.response.data.message);
+    }
   };
 
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h1 className="login-header">Welcome Back!</h1>
+        {error && <div className="error-message">{error}</div>}
         <div className="input-group">
+          <label htmlFor="email" className="login-label">
+            Email Address
+          </label>
           <input
             type="text"
-            placeholder="Enter username"
+            id="email"
+            placeholder="Enter your email address"
             className="login-input"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input-group">
+          <label htmlFor="password" className="login-label">
+            Password
+          </label>
           <input
             type="password"
+            id="password"
             placeholder="Enter password"
             className="login-input"
             value={password}
