@@ -390,3 +390,27 @@ body {
   padding: 10px;
   font-size: 1.25rem;
 }
+
+/*About*/
+.about {
+  padding: 40px 0;
+}
+
+.about-header {
+  margin-bottom: 40px;
+}
+
+.team-members .member {
+  text-align: center;
+}
+
+.team-members .member img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.team-members .member .details {
+  margin-top: 20px;
+}
