@@ -35,7 +35,6 @@
       res.cookie("jwt", token, { sameSite: "None", secure: true });
       res.status(200).json({ message: "Login successful", token });
 
-      console.log(token);
     } catch (e) {
       res.status(500).json({ message: e.message });
       console.log(e.message);

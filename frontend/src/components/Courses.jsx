@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; 
-import "./courses.css"; 
+import { Link } from "react-router-dom";
+import "./courses.css";
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
