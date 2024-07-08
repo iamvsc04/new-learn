@@ -1,8 +1,11 @@
 import React from "react";
-import "../App.css";
+import { Link } from "react-router-dom";
+import { useAuth } from "./AuthContext"; 
 import HomeImage from "./home.jpg";
 
 function Home() {
+  const { authenticated } = useAuth();
+
   return (
     <>
       <div className="container-fluid mt-5">
@@ -12,9 +15,12 @@ function Home() {
             <p className="text-dark">
               Welcome to our comprehensive Learning Platform for students.
             </p>
-            <a href="/register" className="btn btn-danger">
+            <Link
+              to={authenticated ? "/courses" : "/login"}
+              className="btn btn-danger"
+            >
               Getting Started
-            </a>
+            </Link>
           </div>
           <div className="col-lg-6 d-flex justify-content-center">
             <img
@@ -95,8 +101,8 @@ function Home() {
                       <strong>Interactive Learning</strong>
                     </h5>
                     <p>
-                      Engage in immersive learning experiences through
-                      interactive courses and simulations.
+                      Engage in immersive learning through
+                      interactive courses.
                     </p>
                   </article>
                 </div>
@@ -106,7 +112,7 @@ function Home() {
                       <strong>Expert Instruction</strong>
                     </h5>
                     <p>
-                      Learn from industry experts and thought leaders who are
+                      Learn from industry experts who are
                       passionate about sharing their knowledge.
                     </p>
                   </article>

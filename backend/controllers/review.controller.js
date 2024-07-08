@@ -35,3 +35,14 @@ export async function deleteReview(req, res) {
     res.status(500).json({ message: "Something went wrong" });
   }
 }
+
+export async function getReviewsByCourseId(req, res) {
+  try {
+    const { courseId } = req.params;
+    const reviews = await Review.find({ course: courseId }).populate("user", "username");
+    res.status(200).json(reviews);
+  } catch (error) {
+    console.error("Error fetching reviews:", error);
+    res.status(500).json({ error: "Failed to fetch reviews" });
+  }
+}
